@@ -7,7 +7,7 @@ const c = prompt('Введіть температуру в градусах Це
 if (!c){
     alert("помилка! Не введено число");
 } else {
-    if (isFinite(c) || c == 0) {
+    if (!Object.is(+c, NaN)) {
         const f = c*1.8+32;
         alert(`Це те саме, що ${f} по Фаренгейту`);
     }
