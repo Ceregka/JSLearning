@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <Label>Ціна 1: <input type="number" id="A1" value="10"></Label> <br>
+    <Label>Ціна 2: <input type="number" id="A2" value="20"></Label> <br>
+    <Label>Ціна 3: <input type="number" id="A3" value="15"></Label> <br>
+    <Label>Місткість 1: <input type="number" id="B1" value="2"></Label> <br>
+    <Label>Місткість 2: <input type="number" id="B2" value="22"></Label> <br>
+    <Label>Місткість 3: <input type="number" id="B3" value="12"></Label> <br>
+    <input type="button" class="btn" value="Розрахувати">
+
+    <div>
+        <p class="res">Тут буде результат</p>
+    </div> 
+
+    <script>
+        document.querySelector('.btn').addEventListener('click', getMaxMoney);
+
+        function getMaxMoney (){
+            let prices = [];
+            let volumes = [];
+            
+            prices.push(A1.value);
+            prices.push(A2.value);
+            prices.push(A3.value);
+            volumes.push(B1.value);
+            volumes.push(B2.value);
+            volumes.push(B3.value);
+        
+            prices.sort((a,b)=> b-a);
+            volumes.sort((a,b)=> b-a);
+          
+            let result = prices[0]*volumes[0] + prices[1]*volumes[1] + prices[2]*volumes[2];
+            document.querySelector('.res').textContent = `Максимальна вартість - ${result} гривень`;
+            
+        }
+    </script>
+</body>
+</html>
