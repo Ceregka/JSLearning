@@ -17,7 +17,7 @@ function getShortestLength (text) {
 function getShortestLength (text) {
     let words = text.split(' ');
     words.sort((a,b) => a.length - b.length);
-    return words[0].length
+    return words[0].length;
 
 }
 
