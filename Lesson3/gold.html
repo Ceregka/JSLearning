@@ -23,16 +23,9 @@
         document.querySelector('.btn').addEventListener('click', getMaxMoney);
 
         function getMaxMoney (){
-            let prices = [];
-            let volumes = [];
-            
-            prices.push(A1.value);
-            prices.push(A2.value);
-            prices.push(A3.value);
-            volumes.push(B1.value);
-            volumes.push(B2.value);
-            volumes.push(B3.value);
-        
+            let prices = [A1.value, A2.value, A3.value];
+            let volumes = [B1.value, B2.value, B3.value];
+                               
             prices.sort((a,b)=> b-a);
             volumes.sort((a,b)=> b-a);
           
