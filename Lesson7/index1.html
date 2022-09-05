@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let numWords = {
+            0:'',
+            1:'один',
+            2:'два',
+            3:'три',
+            4:'чотири',
+            5:'п \'ять',
+            6:'шість',
+            7:'сім',
+            8:'вісім',
+            9:'дев\'ять',
+            10:'десять',
+            11:'одинадцять',
+            12:'дванадцять',
+            13:'тринадцять',
+            14:'чотирнадцять',
+            15:'п\'ятнадцять',
+            16:'шістнадцять',
+            17:'сімнадцять',
+            18:'вісімнадцять',
+            19:'дев\'ятнадцять',
+            20:'двадцять',
+            30:'тридцять',
+            40:'сорок',
+            50:'п\'ятдесят',
+            60:'шістдесят',
+            70:'сімдесят',
+            80:'вісімдесят',
+            90:'дев\'яносто',            
+        }
+        let num = prompt('Введіть двоцифрове число');
+
+        alert(modify(num));
+
+        function modify(str){
+            if (str[0] == '1') return numWords[str];
+            
+            return numWords[str[0]*10] +' '+ numWords[str[1]];
+        }
+
+    </script>
+</body>
+</html>

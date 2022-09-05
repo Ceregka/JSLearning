@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #modal-form-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            display: none;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+       
+        #cover-div {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9000;
+            width: 100%;
+            height: 100%;
+            background-color: gray;
+            opacity: 0.3;
+        }
+
+        #modal-form {
+            display: inline-block;
+            padding: 10px 10px 10px 10px;
+            width: 200px;
+            border: 1px solid black;
+            background: white;
+            vertical-align: middle;
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
+        }
+
+        #modal-form-container:before {
+            display: inline-block;
+            height: 100%;
+            content: '';
+            vertical-align: middle;
+        }
+        #open {
+            width: 200px;
+            font-size: 22px;            
+        }
+
+    </style>
+</head>
+<body>
+    <button id="open">Відкрити</button>
+
+    <div id="modal-form-container">
+        <form id="modal-form">
+            <div>
+                Hello from Modal Window!
+            </div>
+            <input type="button" id="close" value="Закрити">
+        </form>
+    </div>
+
+    <script>
+        const modalFormContainer = document.getElementById('modal-form-container');
+
+        function showModalForm(){
+            const coverDiv = document.createElement('div');
+            coverDiv.id = 'cover-div';
+            document.body.append(coverDiv);                        
+            modalFormContainer.style.display = 'block';
+        }
+
+        function closeModalForm(){
+            document.getElementById('cover-div').remove();            
+            modalFormContainer.style.display = 'none'; 
+        }
+
+        document.getElementById('open').onclick = function(){
+            showModalForm();
+        }
+
+        document.getElementById('close').onclick = function(){
+            closeModalForm();
+        }
+    </script>
+</body>
+</html>
