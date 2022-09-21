@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>Passport <input id="p" type="text"></p>
+        <p>Phone <input id="t" type="text" placeholder="+"></p>
+        <p>Code <input id="c" type="text"></p>
+        <button>Check</button>
+    </div>
+
+    <script>
+        const inputs = {
+            p:document.getElementById('p'),
+            t:document.getElementById('t'),
+            c:document.getElementById('c'),
+        }
+        
+        inputs.p.addEventListener('blur', ()=>{
+            inputs.p.value = inputs.p.value.toUpperCase(); 
+        })
+
+        inputs.t.addEventListener('input',()=> {
+            if (inputs.t.value[0] != '+') inputs.t.value = '+'+inputs.t.value;
+        })
+
+        document.querySelector('button').addEventListener('click', ()=>{
+            let message = 'Error! ';
+            let isError = false;
+
+            // Перевірка паспорта
+            const pData = inputs.p.value.replace(/\s/g,'');                       
+            if (!pData.match(/\p{L}{2}\d{6}/u) || pData.length != 8) {
+                isError = true;
+                message += 'Invalid passport data!';                
+            }
+
+            //Перевірка телефона
+            const tData = inputs.t.value.slice(1).replace(/\s|\(|\)|-/g,'');            
+            if (tData.match(/\D/) || tData.length != 12) {
+                isError = true;
+                message += 'Invalid phone number!';
+            }
+
+            //Перевірка коду                                    
+            const cData = inputs.c.value;            
+            if (cData.match(/\D/) || cData.length != 10) {
+                isError = true;
+                message += 'Invalid code!';
+            }
+            
+            alert(isError? message:'OK');
+        })
+
+    </script>
+</body>
+</html>
