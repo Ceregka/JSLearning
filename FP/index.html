@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 в лінію</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+    <div class="header">
+        <button class="new-game">Нова гра</button>
+        <button class="about">Правила гри</button>
+        
+    </div>
+    
+    <div class="board">
+        <table >
+            <tbody>
+                <tr>
+                    <td data-x="0" data-y="0"></td>
+                    <td data-x="1" data-y="0"></td>
+                    <td data-x="2" data-y="0"></td>
+                    <td data-x="3" data-y="0"></td>
+                </tr>
+                <tr>
+                    <td data-x="0" data-y="1"></td>
+                    <td data-x="1" data-y="1"></td>
+                    <td data-x="2" data-y="1"></td>
+                    <td data-x="3" data-y="1"></td>
+                </tr>
+                <tr>
+                    <td data-x="0" data-y="2"></td>
+                    <td data-x="1" data-y="2"></td>
+                    <td data-x="2" data-y="2"></td>
+                    <td data-x="3" data-y="2"></td>
+                </tr>
+                <tr>
+                    <td data-x="0" data-y="3"></td>
+                    <td data-x="1" data-y="3"></td>
+                    <td data-x="2" data-y="3"></td>
+                    <td data-x="3" data-y="3"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container">
+        
+    
+        <div class="active">
+            <p class="speaker"></p>
+            <div class="hand">
+
+            </div>
+        </div>
+
+        <div class="set">
+            <table>
+                <tr>
+                    <td><div class="big light flow circle">A</div></td>
+                    <td><div class="small light flow square">A</div></td>
+                    <td><div class="big light flow square">A</div></td>
+                    <td><div class="small light flow circle">A</div></td>
+                    <td><div class="big dark flow circle">A</div></td>
+                    <td><div class="small dark flow square">A</div></td>
+                    <td><div class="big dark flow square">A</div></td>
+                    <td><div class="small dark flow circle">A</div></td>
+                </tr>
+                    <tr>
+                        <td><div class="big light noflow circle">B</div></td>
+                        <td><div class="small light noflow square">B</div></td>
+                        <td><div class="big light noflow square">B</div></td>
+                        <td><div class="small light noflow circle">B</div></td>
+                        <td><div class="big dark noflow circle">B</div></td>
+                        <td><div class="small dark noflow square">B</div></td>
+                        <td><div class="big dark noflow square">B</div></td>
+                        <td><div class="small dark noflow circle">B</div></td>
+                    </tr>
+            </table>
+        </div>      
+
+
+
+    </div> 
+
+    <div id="modal-form-container" class="modal-form-container">
+        <form id="modal-form">
+            <div id="modal-message">
+                Hello from modal form
+            </div>
+            <input type="button" class="close" value="OK">
+        </form>
+    </div> 
+    
+    <div id="about-form-container" class="modal-form-container">
+        <form id="about-form">
+            <div id="about-message">
+                Гравці по черзі виставляють на ігрове поле фігури, обрані попереднім гравцем. <br> Мета гри - скласти лінію з 4-х фігур, які мають спільну ознаку: <br>
+                - велика/мала  <br>
+                - світла/темна <br>
+                - кругла/квавратна <br>
+                - має літеру А/В.
+            </div>
+            <input type="button" class="close-about" value="OK">
+        </form>
+    </div>   
+    
+    <script src="app.js"></script>
+</body>
+</html>

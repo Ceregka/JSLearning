@@ -1,0 +1,153 @@
+body {
+    background-color: green;
+}
+
+.container {
+    display: flex; 
+}
+
+.board {
+    /* background-color: aqua; */
+    display: block;
+    border: 1px solid whitesmoke;
+    
+    /* padding-left: 25% ; */
+    /* padding-right: 25%; */
+}
+
+.board table {
+    margin: 0 auto;
+}
+
+.board td {
+    border: 10px solid brown;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    vertical-align:middle;    
+}
+
+.active {
+    display: block;
+    padding: 50px;    
+}
+
+.speaker {
+    color: #fff;
+    font-size: larger;
+}
+
+.hand {
+    height: 200px;
+    width: 400px;
+    border: 1px solid black;
+    padding-top: 30px;        
+}
+
+.set {
+    /* background-color: aqua; */
+    display: flex;
+    margin: 50px;    
+}
+.set td {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+}
+.big {
+    width: 60px;
+    height: 60px;
+    border: 6px solid black;
+    text-align: center;
+    vertical-align: middle;
+    font: 40px  ;    
+    color: antiquewhite;
+    margin: 0 auto;
+}
+
+.small {
+    width: 40px;
+    height: 40px;
+    border: 6px solid black;
+    text-align: center;
+    vertical-align: bottom;
+    font: 40px  ;    
+    color: antiquewhite;
+    margin: 0 auto;
+}
+
+.light {
+    background-color: rgb(233, 94, 94)
+}
+
+.dark {
+    background-color: rgb(68, 20, 20)
+}
+
+.circle{
+    border-radius: 50%;
+}
+
+.square {
+    border-radius: 10%;
+}
+
+.modal-form-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: none;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+#cover-div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9000;
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+    opacity: 0.6;
+}
+
+#modal-form {
+    display: inline-block;
+    padding: 10px 10px 10px 10px;
+    width: 200px;
+    border: 1px solid black;
+    background: white;
+    vertical-align: middle;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
+}
+
+#about-form {
+    display: inline-block;
+    padding: 10px 10px 10px 10px;
+    width: 200px;
+    border: 1px solid black;
+    background: white;
+    vertical-align: top;    
+    margin-top: 100px ;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
+}
+
+.modal-form-container:before {
+    display: inline-block;
+    height: 100%;
+    content: '';
+    vertical-align: middle;
+}
+
+#modal-message {
+    font: 20px;
+    margin: 10px;
+}
+
+#about-message {
+    padding: 20px;
+}
